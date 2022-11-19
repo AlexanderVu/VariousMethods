@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\Alexander\methods1\VariousConcepts\src\main\java\variousConcepts\VariousConcepts.java"/>
+			<item value="C:\Users\Alexander\methods1\MouseHover"/>
+			<item value="C:\Users\Alexander\methods1\LearnDropDowns"/>
+			<item value="C:\Users\Alexander\methods1\DealingWithPopUps"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="internal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="methods1.DealingwithXMLfordatabase"/>
+			<item value="methods1.WindowHandles"/>
+			<item value="methods1.VariousConcepts"/>
+			<item value="methods1.MouseHover"/>
+			<item value="methods1.LearnScroll"/>
+			<item value="methods1.LearnDropDowns"/>
+			<item value="methods1.DealingWithPopUps"/>
+			<item value="methods1.iFrame"/>
+			<item value="methods1"/>
+			<item value="methods1.KeyboardEvent"/>
+		</list>
+		<list key="groupId">
+			<item value="methods1"/>
+		</list>
+		<list key="artifactId">
+			<item value="DealingwithXMLfordatabase"/>
+			<item value="WindowHandles"/>
+			<item value="VariousConcepts"/>
+			<item value="MouseHover"/>
+			<item value="LearnScroll"/>
+			<item value="LearnDropDowns"/>
+			<item value="DealingWithPopUps"/>
+			<item value="iFrame"/>
+			<item value="KeyboardEvent"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+</section>

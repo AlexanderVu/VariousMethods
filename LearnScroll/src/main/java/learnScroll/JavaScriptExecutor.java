@@ -1,0 +1,44 @@
+package learnScroll;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class JavaScriptExecutor {
+	
+WebDriver driver;
+	
+	
+	
+	@BeforeMethod
+	public void init() {
+
+		System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.get("https://www.dell.com/en-us");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+	}
+	
+	@Test
+	public void testScroll() throws InterruptedException {
+		
+		//down casting forcing class to become something else.. driver ---> javascript
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("scroll(0,5000)");
+		
+		Thread.sleep(3000);
+		js.executeScript("scroll(0,0)");
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,31 @@
+package variousConcepts;
+
+import java.util.concurrent.TimeUnit;
+
+public class VariousConcepts {
+	
+	public void selectFromDropdown(WebElement element, String visibleText) {
+		Select sel = new Select(element);
+		sel.selectByVisibleText(visibleText);
+
+	}
+	
+	public int generateRndomNum(int boundryNum) {
+		Random rnd = new Random();
+		int generatedNum = rnd.nextInt(boundryNum);
+		return generatedNum;
+	}
+	
+	public void init() {
+		
+		System.setProperty("webdriver.chrome.driver", "path");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.get("https://www.techfios.com/billing/?ng=login/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	
+
+}

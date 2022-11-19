@@ -1,0 +1,41 @@
+package mouseHover;
+
+import java.util.concurrent.TimeUnit;
+
+public class ActionsMouseHover {
+	
+WebDriver driver;
+	
+	
+	
+	@Before
+	public void init() {
+
+		System.setProperty("webdriver.chrome.driver", "driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.get("https://www.dell.com/en-us");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		
+	}
+	
+	@Test
+	public void testMouseHover() {
+		
+		WebElement ProductElement = driver.findElement(By.xpath("//span[contains(text(), 'Products')]"));
+		WebElement MonitorElement = driver.findElement(By.xpath("//button[text()='Monitors']"));
+		WebElement AllMonitorsElement = driver.findElement(By.xpath("//a[text() = 'View All Monitors']"));
+		
+		Actions action = new Actions(driver);
+		action.moveToElement(ProductElement).build().perform();
+		action.moveToElement(MonitorElement).build().perform();
+		AllMonitorsElement.click();
+		
+		//Assert
+		
+		
+		
+	}
+
+}

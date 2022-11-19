@@ -1,0 +1,72 @@
+package dropdowns;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+public class SelectDropdowns {
+	
+	// By using the Select class, Select sel = new Select(WEBELEMENT) u are able to use the select methods.
+
+	WebDriver driver;
+
+	By userNameField = By.xpath("//input[@id='username']");
+	By passWordField = By.xpath("//input[@id='password']");
+	By buttonElementField = By.xpath("//button[@name='login']");
+	By dashboardHeaderField = By.xpath("//h2[contains(text(), 'Dashboard' )]");
+	By customerMenuField = By.xpath("//*[@id=\"side-menu\"]/li[3]/a/span[1]");
+	By addcustomerMenuField = By.xpath("//*[@id=\"side-menu\"]/li[3]/ul/li[1]/a");
+	By fullNameField = By.xpath("//input[@id='account']");
+	By companyDropdownField = By.xpath("//select[@id='cid']");
+
+	@BeforeMethod
+	public void init() {
+
+		System.setProperty("webdriver.chrome.driver", "driver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		driver.get("https://www.techfios.com/billing/?ng=login/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+	}
+
+	// @Test
+	public void loginTest() {
+
+		driver.findElement(userNameField).sendKeys("demo@techfios.com");
+		driver.findElement(passWordField).sendKeys("abc123");
+		driver.findElement(buttonElementField).click();
+
+		Assert.assertEquals(driver.getTitle(), "Dashboard- iBilling", "Page Not Found!!");
+
+	}
+
+	@Test
+	public void addCustomerTest() {
+
+		loginTest();
+		driver.findElement(customerMenuField).click();
+		driver.findElement(addcustomerMenuField).click();
+		Assert.assertEquals("Page not found!!", "Contacts - iBilling", driver.getTitle());
+		driver.findElement(fullNameField).sendKeys("Alexander");
+
+		Select sel = new Select(driver.findElement(companyDropdownField));
+		sel.selectByVisibleText("Techfios");
+
+	}
+
+	// @After
+	public void tearDown() {
+		driver.close();
+		driver.quit();
+
+	}
+
+}

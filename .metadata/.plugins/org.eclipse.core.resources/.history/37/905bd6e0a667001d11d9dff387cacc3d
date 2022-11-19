@@ -1,0 +1,65 @@
+package variousConcepts;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Random;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class VariousConcepts {
+	// dropdown method with arguments. to be able to use multiple dropdowns.
+	public void selectFromDropdown(WebElement element, String visibleText) {
+		Select sel = new Select(element);
+		sel.selectByVisibleText(visibleText);
+
+	}
+	//generate random numbers
+	public int generateRndomNum(int boundryNum) {
+		Random rnd = new Random();
+		int generatedNum = rnd.nextInt(boundryNum);
+		return generatedNum;
+	}
+	// initiate browser
+	public void init() {
+		
+		System.setProperty("webdriver.chrome.driver", "path");
+		WebDriver driver = new ChromeDriver();
+		driver.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.get("https://www.techfios.com/billing/?ng=login/");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	}
+	
+	
+	// using this method u are able to find out if file exist. by using the while loop and making sure it is not null
+	public static void doesFileExist(String path) {
+		String path1 = "src\\data\\textFile";
+
+		File f = new File(path1);
+		FileReader fr;
+
+		try {
+
+			fr = new FileReader(f);
+			BufferedReader br = new BufferedReader(fr);
+
+			String line;
+			while ((line = br.readLine()) != null) {
+				System.out.println(line);
+
+				br.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+
+}

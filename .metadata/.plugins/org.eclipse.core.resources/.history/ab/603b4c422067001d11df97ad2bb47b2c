@@ -1,0 +1,32 @@
+package test;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import page.LoginPage;
+import util.BrowserFactory;
+import util.ExcelReader;
+
+public class LoginTest {
+	
+	WebDriver driver;
+	LoginPage loginpage;
+	ExcelReader exlRead = new ExcelReader("mockdata\\Excel Test data.xlsx");
+	String webSite = exlRead.getCellData("Sheet1", "Website", 2);
+	String username = exlRead.getCellData("Sheet1", "Username", 2);
+	String passWord = exlRead.getCellData("Sheet1", "Password", 2);
+	
+	@Test
+	public void loginTest() {
+		
+		BrowserFactory.init();
+		driver.get(webSite);
+		loginpage.login(username, passWord);
+		
+		
+		
+	}
+
+}
+
+

@@ -1,0 +1,76 @@
+package repeatedWords;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
+import org.junit.Test;
+
+public class repeatedletterCounter {
+
+	public void letterCounter() {
+
+		String S = "Hello My Name is Alexander Vu and i am a QA";
+		String V = S.toLowerCase();
+
+		Map<Character, Integer> map = new HashMap<Character, Integer>();
+		for (int i = 0; i < S.length(); i++) {
+			char c = V.charAt(i);
+			if (map.containsKey(c)) {
+				int count = map.get(c);
+				map.put(c, ++count);
+			} else {
+				map.put(c, 1);
+			}
+		}
+		System.out.println(map.entrySet());
+
+	}
+
+	@Test
+	public void letterCounter1() {
+		
+		// First create a HashMap to store the values
+		// Then use the Arraylist collection to to pull the integer value
+		// use Collection . sort to sort the values
+		// the u use for loops to store it in Linkedhashmap
+		
+
+		String str = "asdfasfawjeifiawnvawurhgiojahwga";
+		HashMap<Character, Integer> charMap = new HashMap<Character, Integer>();
+		char[] arr = str.toCharArray();
+
+		for (char value : arr) {
+
+			if (Character.isAlphabetic(value)) {
+				if (charMap.containsKey(value)) {
+					charMap.put(value, charMap.get(value) + 1);
+				} else {
+					charMap.put(value, 1);
+				}
+
+			}
+		}
+		System.out.println(charMap);
+
+		LinkedHashMap<Character, Integer> sortedMap = new LinkedHashMap<Character, Integer>();
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		for (Entry<Character, Integer> entry : charMap.entrySet()) {
+			list.add(entry.getValue());
+
+		}
+		Collections.sort(list);
+		for (int num : list) {
+			for (Entry<Character, Integer> entry : charMap.entrySet()) {
+				if (entry.getValue().equals(num)) {
+					sortedMap.put(entry.getKey(), num);
+				}
+			}
+		}
+		System.out.println(sortedMap);
+	}
+
+}

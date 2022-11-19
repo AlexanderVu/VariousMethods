@@ -1,0 +1,51 @@
+package repeatedWords;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.junit.Test;
+
+public class repeatedletterCounter {
+	
+	
+	public void letterCounter() {
+		
+		String S = "Hello My Name is Alexander Vu and i am a QA";
+		String V = S.toLowerCase();
+		
+		Map<Character, Integer> map = new HashMap<Character,Integer>();
+		for (int i = 0; i < S.length(); i++) {
+			char c = V.charAt(i);
+			if (map.containsKey(c)) {
+				int count = map.get(c);
+				map.put(c, ++count); 
+			} else {
+				map.put(c, 1);
+			}
+		}
+		System.out.println(map.entrySet());
+		
+	}
+	
+	@Test
+	public void letterCounter1() {
+		
+		String str = "asdfasfawjeifiawnvawurhgiojahwga";
+		Map<Character, Integer> charMap = new HashMap<Character, Integer>();
+		char[] arr = str.toCharArray();
+		
+		for( char value: arr) {
+			
+			if(Character.isAlphabetic(value)) {
+				if(charMap.containsKey(value)) {
+					charMap.put(value, charMap.get(value) + 1);
+				}else {
+					charMap.put(value, 1);
+				}
+				System.out.println(charMap);
+			}
+		}
+		
+	}
+
+}

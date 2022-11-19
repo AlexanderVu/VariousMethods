@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Regression">
+
+	<test name="LoginTest">
+
+		<parameter name="userName" value="demo@techfios.com" />
+		<parameter name="password" value="abc123" />
+		<parameter name="dashboardValidText" value="Dashboard" />
+
+		<classes>
+			<!-- to comment out -->
+			<class name="test.LoginTest" />
+
+
+
+		</classes>
+
+
+
+	</test>
+
+
+
+</suite>
